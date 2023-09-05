@@ -1,20 +1,15 @@
 import requests
+username = 'ripxripxrip'
+token = '966853cd6d7f893863f8bac066d447a49d6e60f5'
 
-# Define the URL of your FastAPI server
-url = "http://localhost:8000/sendMessage"  # Replace with the actual URL where your FastAPI server is hosted
-
-# Define the message you want to send
-message = "Hello, FastAPI!"
-
-# Create a dictionary with the message
-data = {"text": message}
-
-# Send a POST request to the URL with the message data
-response = requests.post(url, json=data)
-
-# Check the response
+response = requests.get(
+    'https://www.pythonanywhere.com/api/v0/user/{username}/cpu/'.format(
+        username=username
+    ),
+    headers={'Authorization': 'Token {token}'.format(token=token)}
+)
 if response.status_code == 200:
-    response_data = response.json()
-    print("Response:", response_data)
+    print('CPU quota info:')
+    print(response.content)
 else:
-    print("Error:", response.text)
+    print('Got unexpected status code {}: {!r}'.format(response.status_code, response.content))
