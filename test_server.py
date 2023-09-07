@@ -1,6 +1,6 @@
 import requests
-username = 'ripxripxrip'
-token = '966853cd6d7f893863f8bac066d447a49d6e60f5'
+username = 'USERNAME'
+token = 'YOURTOKEN'
 
 response = requests.get(
     'https://www.pythonanywhere.com/api/v0/user/{username}/cpu/'.format(
