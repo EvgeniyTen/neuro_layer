@@ -23,7 +23,7 @@ class OpenAIService:
         return reply
 
 # Configuration
-openai_service = OpenAIService(api_key="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",
+openai_service = OpenAIService(api_key="YOUR-API-KEY",
                                model="gpt-3.5-turbo")
 
 
